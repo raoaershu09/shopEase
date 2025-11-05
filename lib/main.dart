@@ -1,4 +1,5 @@
 import 'package:e_commerce/app.dart';
+import 'package:e_commerce/controllers/address_controller.dart';
 import 'package:e_commerce/controllers/auth_controller.dart';
 import 'package:e_commerce/controllers/cart_controller.dart';
 import 'package:e_commerce/controllers/product_controller.dart';
@@ -18,8 +19,8 @@ void main() async{
     [
       ChangeNotifierProvider(create: (context) => AuthController(),),
       ChangeNotifierProvider(create: (context) => ProductController(),),
-      ChangeNotifierProvider(create: (context) => CartController(),)
-
+      ChangeNotifierProvider(create: (context) => CartController(),),
+      ChangeNotifierProvider(create: (context) => AddressController(),),
     ],
 
     child: MyApp(),

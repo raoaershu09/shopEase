@@ -1,4 +1,6 @@
 import 'package:e_commerce/core/constants/app_colors.dart';
+import 'package:e_commerce/core/utils/helper.dart';
+import 'package:e_commerce/views/address/address.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
@@ -8,6 +10,74 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+
+    List<ProfileOptions> options = [
+
+  ProfileOptions(
+    icon: Iconsax.user, 
+    title: "My Profile", 
+    onPress: (){
+
+    }
+    ),
+
+
+    ProfileOptions(
+    icon: Iconsax.shopping_bag, 
+    title: "My Orders", 
+    onPress: (){
+
+    }
+    ),
+
+
+    ProfileOptions(
+    icon: Iconsax.location, 
+    title: "My Address", 
+    onPress: (){
+      goto(MyAddressPage(), context);
+    }
+    ),
+
+
+    ProfileOptions(
+    icon: Iconsax.shopping_bag, 
+    title: "Payment Method", 
+    onPress: (){
+
+    }
+    ),
+
+
+    ProfileOptions(
+    icon: Iconsax.heart, 
+    title: "My WishList", 
+    onPress: (){
+
+    }
+    ),
+
+
+    ProfileOptions(
+    icon: Iconsax.setting, 
+    title: "Account Setting", 
+    onPress: (){
+
+    }
+    ),
+
+
+    ProfileOptions(
+    icon: Iconsax.logout, 
+    title: "Logout", 
+    onPress: (){
+
+    }
+    ),
+];
+
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Profile"),
@@ -78,6 +148,7 @@ class ProfileScreen extends StatelessWidget {
                 itemCount: options.length,
                 itemBuilder: (context, index){
                   return ListTile(
+                    onTap: options[index].onPress,
                     leading: Icon(options[index].icon),
                     title: Text(options[index].title,
                     style: TextStyle(
@@ -118,69 +189,3 @@ class ProfileOptions {
     required this.onPress
   });
 }
-
-
-List<ProfileOptions> options = [
-
-  ProfileOptions(
-    icon: Iconsax.user, 
-    title: "My Profile", 
-    onPress: (){
-
-    }
-    ),
-
-
-    ProfileOptions(
-    icon: Iconsax.shopping_bag, 
-    title: "My Orders", 
-    onPress: (){
-
-    }
-    ),
-
-
-    ProfileOptions(
-    icon: Iconsax.location, 
-    title: "My Address", 
-    onPress: (){
-
-    }
-    ),
-
-
-    ProfileOptions(
-    icon: Iconsax.shopping_bag, 
-    title: "Payment Method", 
-    onPress: (){
-
-    }
-    ),
-
-
-    ProfileOptions(
-    icon: Iconsax.heart, 
-    title: "My WishList", 
-    onPress: (){
-
-    }
-    ),
-
-
-    ProfileOptions(
-    icon: Iconsax.setting, 
-    title: "Account Setting", 
-    onPress: (){
-
-    }
-    ),
-
-
-    ProfileOptions(
-    icon: Iconsax.logout, 
-    title: "Logout", 
-    onPress: (){
-
-    }
-    ),
-];

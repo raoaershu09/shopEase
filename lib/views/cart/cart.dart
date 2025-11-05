@@ -1,5 +1,7 @@
 import 'package:e_commerce/controllers/cart_controller.dart';
 import 'package:e_commerce/core/constants/app_colors.dart';
+import 'package:e_commerce/core/utils/helper.dart';
+import 'package:e_commerce/views/checkout/checkout.dart';
 import 'package:e_commerce/widgets/cart_item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -105,7 +107,9 @@ class CartScreen extends StatelessWidget {
                 height: 50,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: (){}, 
+                  onPressed: (){
+                    goto(CheckoutPage(), context);
+                  }, 
                   child: Text("Checkout")
                   ),
               )
